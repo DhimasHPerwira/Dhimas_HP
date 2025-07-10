@@ -1,0 +1,37 @@
+nano soal_2.go
+
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func isPalindrome(s string) bool {
+	// Ubah ke huruf kecil untuk perbandingan case-insensitive
+	s = strings.ToLower(s)
+
+	// Hitung panjang string
+	length := len(s)
+
+	// Bandingkan karakter dari depan dan belakang
+	for i := 0; i < length/2; i++ {
+		if s[i] != s[length-1-i] {
+			return false
+		}
+	}
+	return true
+}
+
+func main() {
+	var input string
+	fmt.Print("Masukkan string: ")
+	fmt.Scanln(&input)
+
+	if isPalindrome(input) {
+		fmt.Println("Output: true (merupakan palindrome)")
+	} else {
+		fmt.Println("Output: false (bukan palindrome)")
+	}
+}
+
