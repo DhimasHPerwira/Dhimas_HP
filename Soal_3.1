@@ -1,0 +1,37 @@
+Nano Soal_3_1.go
+
+package main
+
+import (
+	"fmt"
+)
+
+func findMax(numbers []int) int {
+	max := numbers[0]
+	for _, value := range numbers {
+		if value > max {
+			max = value
+		}
+	}
+	return max
+}
+
+func main() {
+	var n int
+	fmt.Print("Masukkan jumlah elemen: ")
+	fmt.Scanln(&n)
+
+	if n <= 0 {
+		fmt.Println("Jumlah elemen harus lebih dari 0.")
+		return
+	}
+
+	numbers := make([]int, n)
+	for i := 0; i < n; i++ {
+		fmt.Printf("Masukkan elemen ke-%d: ", i+1)
+		fmt.Scanln(&numbers[i])
+	}
+
+	maxValue := findMax(numbers)
+	fmt.Printf("Bilangan terbesar adalah: %d\n", maxValue)
+}
