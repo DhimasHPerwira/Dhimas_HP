@@ -1,0 +1,27 @@
+nano Soal_3.go
+
+package main
+
+import (
+	"fmt"
+)
+
+func findMax(numbers []int) int {
+	max := numbers[0]
+	for _, value := range numbers {
+		if value > max {
+			max = value
+		}
+	}
+	return max
+}
+
+func main() {
+	// Contoh input slice
+	numbers := []int{3, 5, 2, 8, 1}
+
+	// Menemukan bilangan terbesar
+	maxValue := findMax(numbers)
+
+	fmt.Printf("Output: %d (karena %d adalah bilangan terbesar dalam slice tersebut)\n", maxValue, maxValue)
+}
